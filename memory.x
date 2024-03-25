@@ -1,3 +1,4 @@
+/* memory.x */
 /* Linker script for STM32F103RB */
 MEMORY
 {

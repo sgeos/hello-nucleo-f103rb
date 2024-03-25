@@ -1,3 +1,5 @@
+# .cargo/config.toml
+
 [build]
 target = "thumbv7m-none-eabi"
 
