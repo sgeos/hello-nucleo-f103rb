@@ -4,6 +4,11 @@
 
 This project was made while following along with the
 [Embedded Rust Setup Explained](https://www.youtube.com/watch?v=TOAynddiu5M) video.
+The latest commit uses the [stm32f1xx-hal crate](https://crates.io/crates/stm32f1xx-hal)
+to blink the LED.
+It can likely be used as a starting point for any STM32 board, but non F1XX boards
+will require more tinkering with the dependencies.
+Also, note that blinking the led on your board may require different a pin.
 
 ## Basic Tooling
 
