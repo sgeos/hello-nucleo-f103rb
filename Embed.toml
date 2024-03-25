@@ -1,0 +1,12 @@
+[default.general]
+chip = "STM32F103RB"
+
+[default.rtt]
+enabled = true
+
+[default.gdb]
+#enabled = true
+
+[default.reset]
+#halt_afterwards = true
+
