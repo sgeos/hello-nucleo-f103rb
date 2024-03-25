@@ -1,7 +1,7 @@
 # Cargo.toml
 
 [package]
-name = "nucleo-f103rb"
+name = "hello-nucleo-f103rb"
 version = "0.1.0"
 edition = "2021"
 
