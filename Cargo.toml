@@ -8,11 +8,16 @@ edition = "2021"
 [dependencies]
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
 cortex-m-rt = "0.7.3"
-embedded-hal = "1.0.0"
 panic-halt = "0.2.0"
 rtt-target = "0.5.0"
 
-[dependencies.stm32f1xx-hal]
+# These dev-dependencies would likely be full dependencies in a real project.
+# They have been moved here for use in the examples so it is easier to follow
+# along with the video.
+[dev-dependencies]
+embedded-hal = "1.0.0"
+
+[dev-dependencies.stm32f1xx-hal]
 version = "0.10.0"
 features = ["rt", "stm32f103", "medium"]
 

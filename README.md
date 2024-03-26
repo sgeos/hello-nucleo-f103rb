@@ -4,11 +4,20 @@
 
 This project was made while following along with the
 [Embedded Rust Setup Explained](https://www.youtube.com/watch?v=TOAynddiu5M) video.
-The latest commit uses the [stm32f1xx-hal crate](https://crates.io/crates/stm32f1xx-hal)
-to blink the LED.
-It can likely be used as a starting point for any STM32 board, but non F1XX boards
-will require more tinkering with the dependencies.
+The examples use the [stm32f1xx-hal crate](https://crates.io/crates/stm32f1xx-hal)
+hardware abstraction layer (HAL) to do things like blink the LED and get button input.
+
+This repository can likely be used as a starting point for any STM32 board,
+but non F1XX boards will require more tinkering with the dependencies.
 Also, note that blinking the led on your board may require different a pin.
+
+Assuming all the tooling is installed, connect the board to the development host
+machine and run commands to flash the code to the development target.
+
+```sh
+cargo embed
+cargo embed --example button
+```
 
 ## Basic Tooling
 
@@ -33,8 +42,8 @@ The repo author uses `vim` from the command line.
 The author went to Akihabara in Tokyo, and bought a cheap STM32 Nucleo from
 [Akizukidenshi](https://akizukidenshi.com/).
 It turned out to be a NUCLEO-F103RB, and that is what this repo is written for.
-The assumption is that you purchased a random STM32 board, and you can get the
-repo to work with minor modifications.
+The assumption is that the reader has a random STM32 board, and the repo can
+be made to work with minor modifications.
 
 Finding the architecture for the board was not immediately obvious to the author,
 but STM's page on the
@@ -47,6 +56,8 @@ Note that it is a Cortex-M3 with no FPU. Both
 [STM](https://www.st.com/content/st_com/en/arm-32-bit-microcontrollers/arm-cortex-m3.html)
 and [ARM](https://developer.arm.com/Processors/Cortex-M3)
 have documentation for this processor.
+The [UM1724 User manual](https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf)
+for **STM32 Nucleo-64 boards (MB1136)** was also located.
 
 ## Cross-Compilation Tooling
 
