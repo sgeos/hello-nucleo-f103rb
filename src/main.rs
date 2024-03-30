@@ -10,18 +10,19 @@ use panic_halt as _;
 use rtt_target::{rprintln,rtt_init_print};
 
 const BOARD: &str = "Nucleo-F103RB";
+const DELAY: usize = 100_000;
 
 #[entry]
 fn main() -> ! {
   rtt_init_print!();
   rprintln!("Hello, {}!", BOARD);
-  let mut x: usize = 0;
+  let mut counter: usize = 0;
   loop {
-    x += 1;
-    if 100_000 < x {
-      x = 0;
+    counter += 1;
+    if DELAY < counter {
+      counter = 0;
     }
-    match x {
+    match counter {
       0 => rprintln!("Echo..."),
       _ => nop(),
     }
